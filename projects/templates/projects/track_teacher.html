@@ -1,0 +1,276 @@
+{% extends "homepage/base.html" %}
+{% block content %}
+{% load static %}
+    
+<style>
+
+    body {
+        overflow-x: hidden;
+      }
+</style>
+
+    <body>
+        
+    <!--Chartjs CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-stacked100@1.0.0"></script>
+    <link rel="stylesheet" href="{% static 'projects/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'projects/css/style2.css' %}">
+
+
+    <div class='my_first_div'>
+        <h5>Welocm to Monitoring and Evaluating the Performance of Teachers</h5>
+        <p>This project is exclusively working only on Fusion Education Group, MI, US.,  San Marino High School, CA, US.,  Granada Hills Charter High School, CA, US., and all United Arab Emirates Government Schools.</p>
+        
+        <div style='margin-left:-200px;'>
+        <form action="{% url 'projects:track_teacher' %}" method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class='form-group input-file-container'>
+                <label for="old" > Insert 1st Checkoint. (e.g., previous semester)</label>
+                <input type='file' id="old" name = 'oldfile' class='form-control' required placeholder = 'asa'> 
+            </div>
+            <div class='form-group input-file-container'> 
+                <label for="new"> Insert 2nd Checkoint. (e.g., current semester)</label>
+                <input type='file' id='new' name='newfile' class='form-control' required>
+            </div>
+            <div class='form-group input-file-container' >
+                <input class='btn btn-primary'  type='submit' style = "position:absolute; left:0px; top:27px; height:62px">
+
+                <div>
+                    {% if report_exist %} 
+                    <a href='{% url "projects:send_trackTeachers" %}'><button type="button" class='btn btn-primary' style = "position:relative;top:22px; left:51px;font-size: 13px; padding: 6px 2px; " >Send report to the teachers</button></a>
+                    {% else %}
+                    <button type="button" class='btn btn-primary' style = "position:relative;top:22px; left:51px;font-size: 13px; padding: 6px 2px; " disabled>Send report to the teachers</button>
+                    {% endif %} 
+                </div>
+
+                <div>
+                    {% if report_exist %} 
+                    <a href='{% url "projects:download_teachers_report" %}'><button type="button" class='btn btn-primary' style = "position:relative;top:16px; left:51px;font-size: 13px; padding: 6px 20px; margin-top:2px" >Download   the   Report</button></a>
+                    {% else %}
+                    <button type="button" class='btn btn-primary' style = "position:relative;top:16px; left:51px;font-size: 13px; padding: 6px 20px; margin-top:2px" disabled>Download   the   Report</button>
+                    {% endif %} 
+                </div>
+            </div>
+
+        </form> 
+    </div>
+        
+    </div>
+
+    {% comment %} chart1 {% endcomment %}
+    <div class='chartBox'>
+    <canvas id="myChart1"></canvas>
+    </div>
+
+    <div class='chartBox'>
+        <canvas id="myChart2"></canvas>
+    </div>
+
+    <div class='chartBox'>
+        <canvas id="myChart3"></canvas>
+    </div> 
+
+
+
+    <script>
+        var ctx = document.getElementById('myChart1').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [{% for x in df_sorted_total_names %} '{{x}}', {% endfor %}],
+        datasets: [{
+            label: 'Total Points',
+            data: [{% for y in total_points %} {{y}}, {% endfor %} ],
+            backgroundColor: [ {% for back in background  %} '{{back}}', 
+            
+            {% endfor %}
+            ],
+                borderColor: [
+                {% for back in background  %} '{{back}}', 
+            
+                {% endfor %}
+                ],
+                    borderWidth: 1
+        }]
+            },
+        options: { 
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+        });
+    </script> 
+
+    {% comment %} chart2 {% endcomment %}
+    <script>
+        var ctx = document.getElementById('myChart2').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [{% for x in df_sorted_total_names %} '{{x}}', {% endfor %}],
+        datasets: [{
+            label: 'Improvement Index',
+            data: [{% for y in difference %} {{y}}, {% endfor %} ],
+            backgroundColor: [ {% for x in background_difference  %} '{{x}}',  {% endfor %}
+            ],
+                borderColor: [ {% for x in background_difference  %} '{{x}}',  {% endfor %}
+                ],
+                    borderWidth: 1
+        }]
+            },
+        options: { 
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+        });
+    </script> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+    <script>
+        var chrt = document.getElementById("myChart3").getContext("2d");
+        var chartId = new Chart(chrt, {
+            type: 'line',
+            data: {
+                labels: [{% for x in df_sorted_total_names %} '{{x}}', {% endfor %}],
+                datasets: [{
+                    label: "previous week",
+                    data: [{% for y in total_old %} {{y}}, {% endfor %} ],
+                    backgroundColor: ['red'],
+                    borderColor: ['black'],
+                    borderWidth: 2,
+                    pointRadius: 5,
+                }, 
+                {
+                    label: "current week",
+                    data: [{% for y in total_new %} {{y}}, {% endfor %} ],
+                    backgroundColor: ['yellow'],
+                    borderColor: ['blue'],
+                    borderWidth: 2,
+                    pointRadius: 5,
+                }],
+            },
+            options: {
+            },
+        });
+    </script>
+    <script> var count = 0; </script>
+
+
+    {% comment %} <h2>{{combine}}</h2>
+    <h2>{{data}}</h2>
+    <h2>{{pieChart_names}}</h2>
+    <h2>{{pieChart_IDs}}</h2> {% endcomment %}
+
+
+
+
+<div>
+    <div class="chartCard1">
+    {% for id, conf_id,data_id  in combine %}
+
+        <div class="chartBox1">
+            <canvas id='{{id}}'></canvas>
+        </div>
+
+        <script>
+            var pie_data = [{% for x in data  %} {{x}},  {% endfor %}];
+            var pie_names = [{% for x in pieChart_names  %} '{{x}}', {% endfor %}]
+
+            const {{data_id}} = {
+
+                
+                labels: ['% Created Content', '% Discussions', '% Posts','% Questions in Banks', '% Questions in Assessments', '% assessments', '% quizzes', '% Activity', '% Adding Materials' ],
+                datasets: [{
+                  label: 'Weekly Sales',
+                  data: pie_data[count],
+                  backgroundColor: [
+                    'rgba(128,128,128)',
+                    'rgba(30,144,255)',
+                    'rgba(0,255,0)',
+                    'rgba(250,0,0)',
+                    'rgba(255,0,255)',
+                    'rgba(255,20,147)',
+                    'rgba(0,255,255)', 
+                    'rgba(255,255,0)',
+                    'rgba(255,150,50)',
+
+
+
+                  ],
+                  borderColor: [
+                    'rgba(128,128,128, 1)',
+                    'rgba(30,144,255, 1)',
+                    'rgba(0,255,0, 1)',
+                    'rgba(250,0,0, 1)',
+                    'rgba(255,0,255, 1)',
+                    'rgba(255,20,147, 1)',
+                    'rgba(0,255,255,1)',
+                    'rgba(255,255,0,1)',
+                    'rgba(255,150,50)',
+
+                  ],
+                  borderWidth: 1
+                }]
+              };
+          
+              // config 
+              const {{conf_id}} = {
+                type: 'pie',
+                data:{{data_id}},
+                options: {
+              
+
+                    plugins:
+                    {  title:{
+                            display:true, 
+                            text: pie_names[count]
+                    },
+                      
+                        legend: {
+                            display: false
+                        }, 
+                    }
+                
+                }
+              };
+          
+              // render init block
+              {{id}} = new Chart(
+                document.getElementById('{{id}}'),
+                {{conf_id}}                );
+
+                count = count+1;
+      </script>
+      {% endfor %}
+
+    </div>
+
+
+</div>    
+
+
+
+
+ 
+
+
+    </body>
+    </html>
+
+
+
+{% endblock content %}
+
+<h1>hi</h1>
+
+

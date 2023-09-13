@@ -1,0 +1,97 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'homepage/css/donate.css' %}">
+  	<title> Credit Card Form for donation Gateway </title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+
+
+
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+  paypal.Button.render({
+    // Configure environment
+    env: 'sandbox',
+    client: {
+      sandbox: 'AWLjKXKLoE1Qx53XBiD-Ml--PxNYdpirPSbyMr_SU17IOtkY5GvLTFjwTm9b2eNx05iydAsmaQT2vrjH',
+      production: 'demo_production_client_id'
+    },
+    // Customize button (optional)
+    locale: 'en_US',
+    style: {
+      size: 'large',
+      color: 'gold',
+      shape: 'pill',
+    },
+
+    // Enable Pay Now checkout flow (optional)
+    commit: true,
+
+    // Set up a payment
+    payment: function(data, actions) {
+      return actions.payment.create({
+        transactions: [{
+          amount: {
+            total: '{{amount}}',
+            currency: 'USD'
+          }
+        }]
+      });
+    },
+    // Execute the payment
+    onAuthorize: function(data, actions) {
+      return actions.payment.execute().then(function() {
+        // Show a confirmation message to the buyer
+        window.alert('Thank you for your Donation!');
+      });
+    }
+  }, '#paypal-button');
+</script>
+	  
+
+
+<div class="container">
+		<form action="{% url 'donate' %}" method='POST' enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="row">
+				<div class="col">
+					<h3 class="title">DONATE and Support Our Work</h3>
+					<div class="inputBox">
+						<span>cards accepted :</span>
+						<img src="{% static 'homepage/images/card_img.png' %}" alt="">
+					</div>
+					<div class="inputBox">
+						<span>full name :</span>
+						<input type="text" name="full_name" placeholder="Jessica Verdos">
+					</div>
+					<div class="inputBox">
+						<span>email :</span>
+						<input type="email" name="email" placeholder="example@example.com">
+					</div>
+					<div class="inputBox">
+						<span>amount to donate (USD) :</span>
+						<input type="number" name="amount" placeholder="100">
+					</div>
+				</div>
+			<input type="submit" value="proceed to Donate" class="submit-btn">
+		</form>
+		
+		{% if amount %}
+			<div id="paypal-button" ></div>
+		{% endif %}
+
+	</div> 
+
+
+</body>
+</html>

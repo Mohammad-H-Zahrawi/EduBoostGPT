@@ -1,0 +1,95 @@
+
+{% extends "homepage/base.html" %}
+{% block content %} 
+
+
+  <!DOCTYPE html>
+  {% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'projects/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'projects/css/style2.css' %}">
+
+  <video autoplay muted loop id="bg-video">
+    <source src="{% static 'projects/images/lessonplanvidep.mp4'%}"  type="video/mp4">
+  </video>
+
+  <style>
+      #bg-video {
+      background-image: url("{% static 'projects/images/lessonplanbackground.JPG' %}");
+      min-width: 100%;
+      min-height: 100%;
+    }
+    body{
+      overflow:hidden;
+    }
+  </style>
+
+
+  <div class="split left">
+      <div class="centered">
+          <form action="{% url 'projects:LessonPlanGPT' %}" method='POST' enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <div class="tm-mb-30">
+                <input type='text' id="lesson_name" name = 'lesson_name' class='form-control-examgpt rounded-0 border-top-0 border-end-0 border-start-0' placeholder='Lesson Name (in English)' required>
+              </div>
+              <div  class="tm-mb-30">
+                <input type='text' id="subject" name = 'subject' class='form-control-examgpt rounded-0 border-top-0 border-end-0 border-start-0' placeholder='Subject' required>
+              </div>
+              <div class="tm-mb-30">
+                <input type='text' id="grade" name = 'grade' class='form-control-examgpt rounded-0 border-top-0 border-end-0 border-start-0' placeholder='Grade' required>
+              </div>
+
+              <div class="tm-mb-30">
+                  <input type='text' id="school_name" name = 'school_name' class='form-control-examgpt rounded-0 border-top-0 border-end-0 border-start-0' placeholder='School Name' required>
+              </div>
+          
+              <div class="tm-mb-30">
+                  <input type='text' id="teacher_name" name = 'teacher_name' class='form-control-examgpt rounded-0 border-top-0 border-end-0 border-start-0' placeholder='Teacher Name' required>
+              </div>
+          
+              <input  type='submit' class="button-89">
+          </form> 
+      </div>
+  </div>
+  
+
+  <div class="split right exam_box">
+    <div class="centered tm-bg-dark intro-left">
+      <h5>Generating Lesson Plans using ChatGPT</h5>
+      <ul >
+        <li> <p> Powered by GPT.</p></li>
+        <li> <p> Lesson Plans written in English.</p></li>
+        <li> <p> It may take long to fetch the data.</p></li>
+        <li> <p>غير مدعوم باللفة العربية </p></li>
+      </ul>
+    </div>
+  </div>
+ 
+  {% comment %} <div class='whisperLink'>
+    <a href = "{% url 'projects:examGPT_voice' %}"  target="_blank"> <input type="button" value="Generate Quizzes Using your Voice"  class="button-89"></a> 
+  </div> {% endcomment %}
+    <style>
+      .whisperLink{ position:absolute;
+         z-index: 1000; 
+        top:33vw; left:140vh;
+      }
+    </style>
+
+
+  {% if lessonPlan_ready_for_downloading %}
+    <div class = 'd_buttons'>
+        <div>
+          <a href = "{% url 'projects:download_lessonPlan'  %}">
+            <button class="button-89" style='width:300px'> Download Lesson Plan</button>
+            </a>
+        </div>
+
+    </div>
+    {% endif %}
+
+
+
+{% endblock content %} 

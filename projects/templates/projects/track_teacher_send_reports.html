@@ -1,0 +1,47 @@
+{% extends "homepage/base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thank You</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+        <img src="{% static 'homepage/images/404-tick.png'%}" alt="">
+
+		<h1>Thank You</h1>
+		<p>sent successfully</p>
+	</div>
+
+</body>
+</html>
+
+
+
+<style>
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    h1 {
+        font-size: 3em;
+        margin-bottom: 30px;
+    }
+    
+    p {
+        font-size: 1.5em;
+    }
+    
+</style>
+
+
+{% endblock content %}

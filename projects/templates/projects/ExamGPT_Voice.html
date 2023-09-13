@@ -1,0 +1,139 @@
+
+{% extends "homepage/base.html" %}
+
+{% block content %} 
+{% comment %} <!DOCTYPE html> {% endcomment %}
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generating Exams usign GPT Whispers</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {% comment %} <link rel="stylesheet" href="{% static 'projects/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'projects/css/style2.css' %}"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'projects/css/examGPT_voice.css' %}">
+
+
+  <style>
+    body {
+      background-image: url("{% static '/projects/images/whisper_voice_background.jpeg' %}");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+    }
+ 
+   
+
+
+  </style>
+</head>
+
+<body>
+
+
+
+     
+  <div class="app">
+    <div class='audio-settings'>
+      
+
+    <select name="" id="micSelect"></select>
+  
+    <select id="visSelect">
+      <option value="frequencybars">Bar</option>
+      <option value="sinewave">Wave</option>
+      <option value="circle">Circle</option>
+    </select>
+  </div>
+
+    {% comment %} <a id="download" >Download</a> {% endcomment %}
+  
+    <div class="audio-controls">
+      <a href="{% url 'projects:record' %}"><button id="record" class="button-59" > Record</button></a>
+
+      {% comment %} <button id="stop">Stop</button> {% endcomment %}
+      {% comment %} <audio id="audio" controls></audio> {% endcomment %}
+    </div>
+  
+    <div id="msg">Recording .....</div>
+    <canvas width="500" height="300"></canvas>
+    
+  <div>
+      <form action="{% url 'projects:examGPT_voice' %}" method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="radio-toolbar">
+      
+        <input type='radio' id="topic_language1" name = 'topic_language'  value='English'   >
+        <label for="topic_language1" > English </label>
+        <input type='radio' id="topic_language2" name = 'topic_language'  value='Arabic' >
+        <label for="topic_language2" > Arabic </label>
+
+    </div>
+    {% if voice_recorded_completed %}
+      <input  type='submit' class="button-89">
+    {% else%}
+      <input  type='submit' class="#" disabled>
+    {% endif %}
+</form>
+
+
+
+
+
+{% if exam_ready_for_downloading %}
+    <div class = 'd_buttons'>
+      <div>
+        <a href = "{% url 'projects:download_exam_whisper'  %}">
+          <button class="button_downloads" style='width:300px'> Download Quiz</button>
+          </a>
+      </div>
+      {% if answers_ready_for_downloading %}
+
+      <div> 
+        <a href = "{% url 'projects:download_exam_answers_whisper'  %}">
+        <button class="button_downloads" style='width:300px'> Download Answers.</button>
+        </a>
+      </div>
+      {% endif %}
+
+    </div>
+{% endif %}
+  
+  
+
+
+
+
+  {% comment %} {% if exam_ready_for_downloading %}
+
+    <div class = 'd_buttons'>
+        <div>
+          <a href = "{% url 'projects:download_exam'  %}">
+            <button class="button_downloads" style='width:300px'> Download Quiz</button>
+            </a>
+        </div>
+
+      {% if topic_language %}
+        <div> 
+          <a href = "{% url 'projects:download_answers'  %}">
+          <button class="button_downloads" style='width:300px'> Download Answers.</button>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+    {% endif %} {% endcomment %}
+
+
+    <script src="{% static "projects/js/ExamGPT_voice.js" %}"></script>
+
+</body>
+</html>
+
+
+{% endblock content %} 

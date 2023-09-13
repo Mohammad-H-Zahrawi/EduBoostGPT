@@ -1,0 +1,552 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBoostAI HomePage</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="icon" type="image/png" href="{% static 'homepage/images/favicon.png'%}">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="{% static 'homepage/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css/templatemo-style.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
+
+
+</head>
+
+<body>
+    <!-- start navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+        <div class="container">
+            
+            <div class="row">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                        
+                    </button>
+ 
+
+                    <a href="#" class="navbar-brand"><h1 style="position:relative; margin-top: 15px;">EduBoostAI</h1></a>
+                    {% comment %} <a href="#" class="navbar-brand"><h3 style="margin-top: 20px; margin-left:1050px; color:Red">DONATE</h3></a> {% endcomment %}
+
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" class="smoothScroll">HOME</a></li>
+                        <li><a href="#about" class="smoothScroll">STUDIO</a></li>
+                        <li><a href="#service" class="smoothScroll">SERVICES</a></li>
+                        <li><a href="#portfolio" class="smoothScroll">PROJECTS</a></li>
+                        <li><a href="#team" class="smoothScroll">TEAM</a></li>
+                        <li><a href="#newsletter" class="smoothScroll">CONTACT US</a></li>
+
+                    </ul>
+
+                    
+                    
+                </div>
+                
+            </div>		
+            		
+        </div>
+        
+    </nav>
+    <!-- end navigation -->
+
+    <!-- start home -->
+  <!--==========================
+    Hero Section
+  ============================-->
+  {% block content %}   
+
+    <section id="hero">
+      <div class="hero-container">
+        <h1>Welcome to EduBoostAI</h1>
+        <h2>We aid Ministries, Federal Entities, and businesses in embedding state-of-the-art AI</h2>
+        <a href="#about" class="btn-get-started">Get Started</a>
+      </div>
+    </section><!-- #hero -->
+
+  <main id="main">
+    <!-- start about -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-7 wow fadeInLeft" data-wow-delay="2000">
+                    <h3>Welcome to EduBoostAI </h3>
+                    <h2>EduBoostAI Inc. in UAE & USA</h2>
+                    <p><span class="green">EduBoostAI's </span> team designs and develops AI solutions in many industries. Technology is evolving in the direction of more <span class="blue">automation, speed, and efficiency</span> as well as <span class="blue">specialization and personalization</span>. Data intelligence and AI are becoming essential strategic components for staying competitive, innovating, and providing superior service.</p>
+                </div>
+                <div class="col-sm-6 col-md-5 wow fadeInRight" data-wow-delay="2000">
+                    <h3>Industries</h3>
+
+                    <div class= "col-md-6 col-sm-6 col-xs-6 portfolio-item">
+                        
+                        <img src= "{% static 'homepage/images/education-ai.jpg' %}" alt="Education" class="img-responsive" >
+                        <div class="details">
+                            <h4>Education</h4>
+                        </div>
+                      
+                    </div>
+                    <div class= "col-md-6 col-sm-6 col-xs-6 portfolio-item">
+                        
+                        <img src= "{% static 'homepage/images/government-ai.png' %}" alt="Government" class="img-responsive">
+                        <div class="details">
+                            <h4>Government</h4>
+                        </div>
+                        
+                    </div>
+                    <div class= "col-md-6 col-sm-6 col-xs-6 portfolio-item">
+                        
+                        <img src= "{% static 'homepage/images/tran.png' %}" alt="Health-Care" class="img-responsive">
+                        <div class="details">
+                            <h4>Transportation</h4>
+                        </div>
+                        
+                    </div>
+                    <div class= "col-md-6 col-sm-6 col-xs-6 portfolio-item">
+                        
+                        <img src= "{% static 'homepage/images/consulting.jpg' %}" alt="Data-Mining" class="img-responsive">
+                        <div class="details">
+                            <h4>consulting</h4>
+                        </div>
+                        
+                    </div>
+            </div>
+        </div>
+    </section>
+    <!-- end about -->
+
+    <!-- start service -->
+    <section id="service">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-md-12 wow fadeInDown" data-wow-delay="2000">
+                    <h3>EduBoostAI SERVICES</h3>
+
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center">
+                    <p>We are artificial inteligience experts. We specialise in Computational Linguistics, Machine Learning, Deep Learning and Data Analytics. We employ cutting-edge AI tools, technologies, and methods to help businesses onboard data rapidly and at scale. We also make use of a number of models and AI applications to generate novel insights that promote better decision-making.</p>
+                </div>
+                <div class="col-md-2"></div>
+
+
+
+                <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+                    <div class="media">
+                        <i class="fa  fa-briefcase pull-left media-object"></i>
+                            <div class="media-body">
+                                <h4 class="media-heading">LLMs in Education</h4>
+                                <p> LLMs are a powerful tool that can be used to improve education in more innovative and creative ways in all educational institutions.</p>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+                  <div class="media">
+                      <i class="fa fa-globe pull-left media-object"></i>
+                          <div class="media-body">
+                              <h4 class="media-heading">Big Data in Education</h4>
+                              <p> Transform educational outcomes by using big data analytics powered by AI to enhance student learning successes, identify student talents, and optimize learning programs</p>
+                          </div>
+                  </div>
+              </div>
+
+              <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+                <div class="media">
+                    <i class="fa  fa-university pull-left media-object"></i>
+                        <div class="media-body">
+                            <h4 class="media-heading">AI in Governments</h4>
+                            <p> AI can help governments to deliver better public services including transportaion, environment, and energy sector, to make more informed decisions.</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+              <div class="media">
+                  <i class="fa fa-user-o pull-left media-object"></i>
+                      <div class="media-body">
+                          <h4 class="media-heading">ChatBots</h4>
+                          <p> We build customized chatbots with ChatGPT, that can be powerful tools for engaging with customer, people, providing support, and automating repetitive tasks.</p>
+                      </div>
+              </div>
+          </div>
+                
+          <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+            <div class="media">
+                <i class="fa fa-line-chart pull-left media-object"></i>
+                    <div class="media-body">
+                      <h4 class="media-heading">AI Consulting</h4>
+                      <p>Our AI specialists will work cooperatively with you to pinpoint areas where we can integrate AI capabilities into your current services.</p>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+          <div class="media">
+              <i class="fa fa-cogs pull-left media-object"></i>
+                  <div class="media-body">
+                    <h4 class="media-heading">Intelligent Process Automation</h4>
+                    <p> IPA can help organizations to achieve greater efficiency, and productivity, by automating complex processes, reducing errors and costs</p>
+                  </div>
+          </div>
+      </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+    <!-- end service -->
+
+    <!--==========================
+      Portfolio Section # same as Projects
+      Projects
+    ============================-->
+    <section id="portfolio">
+        <div class="container wow fadeInUp">
+          <div class="section-header">
+            <h3 class="section-title">Projects</h3>
+            <p class="section-description">Projects That We're Proud Of</p>
+          </div>
+          <div class="row">
+  
+            <div class="col-lg-12">
+              <ul id="portfolio-flters">
+
+              </ul>
+            </div>
+          </div>
+  
+          <div class="row" id="portfolio-wrapper">
+            <div class="col-lg-3 col-md-6 portfolio-item filter-Education">
+              <a href="{% url 'projects:track_teacher' %}">
+                <img src="{% static 'homepage/images/projects/teacher_performance_monitoring.jpg' %}" alt="Monitoring and Evaluating the Performance of Teachers" class = 'responsivee'>
+                <div class="details">
+                  <h4>Monitoring and Evaluating the Performance of Teachers</h4>
+                </div>
+              </a>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-Education">
+              <a href="{% url 'projects:LessonPlanGPT' %}">
+                <img src="{% static 'homepage/images/projects/lesson_plan.png' %}" alt="Generating Lesson Plan using ChatGPT" class = 'responsivee'>
+                <div class="details">
+                  <h4>Making Lesson Plans using ChatGPT</h4>
+                </div>
+              </a>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+              <a href="{% url "projects:examGPT" %}">
+                <img src="{% static 'homepage/images/projects/chatgpt_making_exams.jpg' %}" alt="Making Exams & quizzes using ChatGPT" class = 'responsivee'>
+                <div class="details">
+                  <h4>Making Exams using ChatGPT</h4>
+                </div>
+              </a>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-card">
+              {% comment %} <a href=""> {% endcomment %}
+                <img src="{% static 'homepage/images/projects/coming soon.jpg' %}" alt="Coming Soon" class = 'responsivee'>
+                <div class="details">
+                  <h4>COMING SOON</h4>
+                </div>
+              {% comment %} </a> {% endcomment %}
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-card">
+              {% comment %} <a href=""> {% endcomment %}
+                <img src="{% static 'homepage/images/projects/coming soon.jpg' %}" alt="Coming Soon" class = 'responsivee'>
+                <div class="details">
+                  <h4>COMING SOON</h4>
+                </div>
+              {% comment %} </a> {% endcomment %}
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-web">
+              {% comment %} <a href=""> {% endcomment %}
+                <img src="{% static 'homepage/images/projects/coming soon.jpg' %}" alt="Coming Soon" class = 'responsivee'>
+                <div class="details">
+                  <h4>COMING SOON</h4>
+                </div>
+              {% comment %} </a> {% endcomment %}
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-card">
+              {% comment %} <a href=""> {% endcomment %}
+                <img src="{% static 'homepage/images/projects/coming soon.jpg' %}" alt="Coming Soon" class = 'responsivee'>
+                <div class="details">
+                  <h4>COMING SOON</h4>
+                </div>
+              {% comment %} </a> {% endcomment %}
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+              {% comment %} <a href=""> {% endcomment %}
+                <img src="{% static 'homepage/images/projects/coming soon.jpg' %}" alt="Coming Soon" class = 'responsivee'>
+                <div class="details">
+                  <h4>COMING SOON</h4>
+                </div>
+              {% comment %} </a> {% endcomment %}
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
+              {% comment %} <a href=""> {% endcomment %}
+                <img src="{% static 'homepage/images/projects/coming soon.jpg' %}" alt="Coming Soon" class = 'responsivee'>
+                <div class="details">
+                  <h4>COMING SOON</h4>
+                </div>
+              {% comment %} </a> {% endcomment %}
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
+              {% comment %} <a href=""> {% endcomment %}
+                <img src="{% static 'homepage/images/projects/coming soon.jpg' %}" alt="Coming Soon" class = 'responsivee'>
+                <div class="details">
+                  <h4>COMING SOON</h4>
+                </div>
+              {% comment %} </a> {% endcomment %}
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-web">
+              {% comment %} <a href=""> {% endcomment %}
+                <img src="{% static 'homepage/images/projects/coming soon.jpg' %}" alt="Coming Soon" class = 'responsivee'>
+                <div class="details">
+                  <h4>COMING SOON</h4>
+                </div>
+              {% comment %} </a> {% endcomment %}
+            </div>
+  
+            <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
+              {% comment %} <a href=""> {% endcomment %}
+                <img src="{% static 'homepage/images/projects/coming soon.jpg' %}" alt="Coming Soon" class = 'responsivee'>
+                <div class="details">
+                  <h4>COMING SOON</h4>
+                </div>
+              {% comment %} </a> {% endcomment %}
+            </div>
+  
+          </div>
+  
+        </div>
+    </section><!-- #portfolio -->
+
+    
+    <!-- start team -->
+    <section id="team" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInDown" data-wow-delay="900">
+                    <h3>Meet EduBoostAI Team</h3>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <p>We are proud of the work we have done so far, and we are excited to see what the future holds for our team. We believe that we have the potential to achieve great things, and we are committed to working together to make it happen.
+                    </p>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-sm-6 col-md-3 wow fadeInLet" data-wow-delay="2000" style='left:0'>
+                    <div class="team_thumb">
+                        <img src="{% static 'homepage/images/contacts/MohammadZahrawiPicture.jpg' %}" alt="Mohammad Zahrawi" class="img-responsive">
+                            <div class="team_overlay">
+                                <ul class="social_icon">
+                                    <li><a href="https://www.linkedin.com/in/mohammad-zahrawi-11a0a2133/" target="_blank" class="fa fa-linkedin-square" style="font-size:24px"></a></li>
+
+                                </ul>								
+                            </div>
+                    </div>
+                    <div class="team_description">
+                        <h4>Mohammad Zahrawi</h4>
+                        <h5>Founder @ EduBoostAI, Senior Machine Learning Engineer</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="2000" style='left:100'>
+                    <div class="team_thumb">
+                        <img src="{% static 'homepage/images/contacts/JessicaVerdosPhoto.jpg' %}" alt="Jessica Verdos" class="img-responsive">
+                            <div class="team_overlay">
+                                <ul class="social_icon">
+                                  <li><a href="https://www.linkedin.com/in/jessica-verdos-658769254/" target="_blank" class="fa fa-linkedin-square" style="font-size:24px"></a></li>
+                                </ul>
+                            </div>
+                    </div>
+                    <div class="team_description">
+                        <h4>Jessica Verdos</h4>
+                        <h5>Senior Data Scientist & AI specialist in Education</h5>
+                    </div>
+                </div>
+
+                
+               <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="2000" style='left:200'>
+                    <div class="team_thumb">
+                        <img src="{% static 'homepage/images/contacts/Othaiba.jpg' %}" alt="Othaiba Al Mazroui" class="img-responsive">
+                            <div class="team_overlay">
+                                <ul class="social_icon">
+                                  <li><a target="_blank" class="fa fa-linkedin-square" style="font-size:24px"></a></li>
+
+                                </ul>
+                            </div>
+                    </div>
+                    <div class="team_description">
+                        <h4>Othaiba Al-Mazrouei</h4>
+                        <h5>Education Development Specialist in MOE</h5>
+                    </div>
+                </div>
+
+                {% comment %} 
+                <div class="col-sm-6 col-md-3 wow fadeInRight" data-wow-delay="2000">
+                    <div class="team_thumb">
+                        <img src="{% static 'homepage/images/Image2.jpeg' %}" alt="Abdullah Tahir" class="img-responsive">
+                            <div class="team_overlay">
+                                <ul class="social_icon">
+                                  <li><a href="https://www.linkedin.com/in/mat919/" target="_blank" class="fa fa-linkedin-square" style="font-size:24px"></a></li>
+
+                                </ul>
+                            </div>
+                    </div>
+                    <div class="team_description">
+                        <h4>Abdullah Tahir</h4>
+                        <h5>J. Data Scientist</h5>
+                    </div>
+                </div> {% endcomment %}
+
+                
+                        
+            </div>
+        </div>
+    </section>
+    <!-- end team -->
+
+    <!-- start newsletter -->
+    <section id="newsletter" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-md-12 wow fadeInDown" data-wow-delay="2000">
+                    <h3>CONTACT US</h3>
+                </div>
+                  <form role="form" action="" method='POST' enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                      <div class="col-md-3"></div> 
+                      <div class="col-md-3"> 
+                        <input type="text" placeholder="First Name" class="form-control" name='first_name_contact_us' required>                
+                      </div>
+                      <div class="col-md-3"> 
+                          <input type="text" placeholder="Last Name" class="form-control" name='last_name_contact_us' required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                      <div class="col-md-3"></div> 
+                      <div class="col-md-6"> 
+                        <input type="email" placeholder="Enter your Email" class="form-control" name='email_contact_us' required>
+                      </div> 
+                    </div>
+
+                    <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                      <div class="col-md-3"></div> 
+                      <div class="col-md-6"> 
+                        <input type="number" placeholder="Phone Number (optional)" class="form-control" name='number_contact_us' required>
+                      </div> 
+                    </div>
+
+                    <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                      <div class="col-md-3"></div> 
+                      <div class="col-md-6"> 
+                        <input type="textarea" placeholder="Inquiry | Feedback | complaint | Other" name='inquiry_contact_us' class="form-control" required col='80'>
+                      </div> 
+                      <div class="col-md-3"></div> 
+                    </div>
+
+                    <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                      <div class="col-md-5"></div> 
+                      <div class="col-md-2 "> 
+                        <input type="submit" value="send" class="form-control">
+                      </div> 
+                    </div>
+                    </div>
+                  </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- start footer -->
+    <footer class='footerClass'>
+      <div class="container-footer">
+        <div class="contact-section">
+          <h3>Call Us</h3>
+          <p>Phone: 971-544-625-185</p>
+          <p>N/A</p>
+        </div>
+        <div class="contact-section-footer">
+          <h3>Reach Us</h3>
+          <p>Mohammad Zahrawi on linkedin</p>
+          <p>Jessica Verdos</p>
+        </div>
+        <div class="contact-section">
+          <h3>Email Us</h3>
+          <p>Email: eng.moh.zahrawi@gmail.com</p>
+          <p>Jessica.verdos@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="copyrights-footer">
+        <p>&copy; 2023-2024 EduBoostAI. All rights reserved.</p>
+      </div>
+    </footer>
+
+
+
+
+
+
+		<!-- end footer -->
+   
+    <script src="{% static "homepage/js/bootstrap.min.js"%}"></script>
+    <script src="{% static "homepage/js/jquery.js" %}"></script>
+    <script src="{% static "homepage/js/jquery.flexslider.js" %}"></script>
+
+    <script src="{% static "homepage/js/jquery.simple-text-rotator.js" %}"></script>
+
+    <script src="{% static "homepage/js/wow.min.js" %}"></script>
+
+    <script src="{% static "homepage/js/main.js" %}"></script>
+
+
+
+
+
+    
+  </main>
+  {% endblock content %}   
+
+</body>
+</html>
+
+
+
+
+

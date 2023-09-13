@@ -1,0 +1,278 @@
+/* track_teachers */
+/* track_teachers */
+.chartBox{
+  width: 1450px;
+  height:800px
+}
+
+*{
+  margin: 5;
+  padding: 0;
+  font-family: sans-serif;
+} 
+
+.chartCard1 {
+  width: 10vw;
+  padding: 50px 30px 20px 5px;
+
+  height: calc(100vh - 40px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.chartBox1 {
+  width: 370px;
+  padding: 50px;
+  border-radius: 20px;
+  border: solid 3px rgba(54, 162, 235, 1);
+  background: white;
+  margin-left: auto;  
+  margin-right: auto;
+  justify-content:center; 
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 40px;
+  border: none;
+  background: #084cdf;
+  padding: 8px 18px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  height: 40px;
+
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #8b0690;
+  width:350px
+}
+
+.input-file-container {
+  width: 400px;
+  position:relative; left:200;
+  display: inline-block;
+}
+
+.my_first_div {
+  margin: auto;
+text-align: center;
+background: url("../images/greenBoard.358fe32845be.jpg") no-repeat center center;
+color: rgb(233, 227, 227);
+padding: 0px 0px 20px 00px;
+
+}
+
+.my_first_div h5 {
+  padding: 20px 0px 5px 100px;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+/* ExamGPT */
+/* ExamGPT */
+
+
+#bg-video {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -100;
+  background-image: url("../images/northlightvideo.64a4f66a00be.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.tm-bg-dark {
+  background-color: rgba(0,0,0,0.3);
+  color:white;
+  padding: 50px 30px 30px 30px;
+  width: 400px;
+}
+.tm-bg-dark h5{
+  padding: 0px 0px 30px 0px;
+
+}
+
+.intro-left {
+    color: #ffffff;
+    margin-top: -30px;
+
+
+}
+.mb-4{margin-bottom:1.5rem!important ; 
+}
+
+
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+  
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+}
+
+/* Control the right side */
+.right {
+  right: -40;
+  z-index: -5;
+  
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+}
+
+ul li {
+margin-top: -15;}
+
+
+.form-control-examgpt {
+  font-size: 1.2rem;
+  padding: 15px 0;
+}
+
+.form-control-examgpt,
+.form-control-examgpt:focus {
+  color: white;
+  background-color: transparent;
+}
+
+.form-control-examgpt:focus {
+  border-bottom: 1px solid #99FF66;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.border-end-0{border-right:0!important}
+.border-start-0{border-left:0!important}
+
+.tm-mb-30 {
+  margin-bottom: 30px;
+}
+
+input::placeholder {
+    font-weight: bold;
+    opacity: 0.6;
+    color:#fff
+}
+
+.d_buttons{
+left:40%;  
+top: 50%;
+display: block;
+position: absolute;
+}
+
+.button-89 {
+  --b: 4px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #ffffff;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 20px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+
+/*nuiniu*/
+
+
+.button_downloads {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 150;
+  font-size: 1.5em;
+  padding: 0.75em 1em;
+  color: blue;
+  border: 0.15em solid blue;
+  border-radius: calc(0.75em + 0.5em + 0.15em);
+  transition: 4s;
+  width: 120px;
+  height: 80px;
+}
+.button_downloads:before, .button_downloads:after {
+  content: "";
+  position: absolute;
+  top: -1.5em;
+  z-index: -1;
+  width: 200%;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 40%;
+  background-color: rgba(0, 0, 255, 0.25);
+  transition: 4s;
+}
+.button_downloads:before {
+  left: -80%;
+  transform: translate3d(0, 5em, 0) rotate(-340deg);
+}
+.button_downloads:after {
+  right: -80%;
+  transform: translate3d(0, 5em, 0) rotate(390deg);
+}
+.button_downloads:hover, .button_downloads:focus {
+  color: white;
+}
+.button_downloads:hover:before, .button_downloads:hover:after, .button_downloads:focus:before, .button_downloads:focus:after {
+  transform: none;
+  background-color: rgba(0, 0, 255, 0.75);
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
