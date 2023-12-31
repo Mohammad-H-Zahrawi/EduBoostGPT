@@ -32,9 +32,9 @@ MEDIA_URL = '/media/'
 SECRET_KEY = "django-insecure-fc#0m)0)t$m0vf+mdgtv-q_amszu+xma1=j)_(jdd_4g9vzqwl"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['eduboostai.org' , 'www.eduboostai.org', '3.28.160.242' ,'127.0.0.1' ]
+ALLOWED_HOSTS = ['eduboostai.org' , 'www.eduboostai.org', '51.112.67.200' ,'127.0.0.1' ]
 # ALLOWED_HOSTS = ['*']
 # Application definition
 
